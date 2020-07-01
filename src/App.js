@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Cronometro from "./components/cronometro";
+import { createGlobalStyle } from "styled-components";
+import Cronometrohooks from "./components/cronometrohooks";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const GlobalStyle = createGlobalStyle`
+body{
+  background-color:#222;
+  color: #387EF5;
+  text-align:center
+
+}
+`;
+
+class App extends Component {
+  render() {
+    return (
+      <>
+        <GlobalStyle />
+
+        <h1>Cronómetro</h1>
+
+        <Cronometrohooks />
+      </>
+    );
+  }
 }
 
 export default App;
